@@ -1,12 +1,21 @@
+div{
+  font-family: helvetica, sans-serif;
+}
+
+nav{
+  font-family: helvitica, sans-serif;
+}
+
 div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
   float: left;
   width: 250px;
+  margin-left: 50px;
 }
 
-div.gallery:hover {
-  border: 1px solid #777;
+div.gallery:hover{
+  border: 1px solid #3cb3719e;
 }
 
 div.gallery img {
@@ -26,5 +35,38 @@ div.desc {
 .gallery:hover{
 	transform: rotate(360deg);
 	opacity: 1;
-	background: #1ec7e6;
+	background: #3cb3719e;
+}
+
+nav ul{
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  width: 20%;
+  transition-duration: 1s;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  background-color: #3cb3719e;
+  margin-left: 35px;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+header{
+  transition-duration: 1s;
+  display: block;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  padding: 25px;
+  border-radius: 25px;
+  background-color: #3cb371;
+  background-blend-mode: 25%;
+  height: 40px;
+  margin-left: 10px;
+  font-family: helvetica, sans-serif;
+  font-size: 2em;
+  margin-top: 15px;
 }
