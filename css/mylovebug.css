@@ -2,7 +2,7 @@
   #outerspace {
     position: relative;
     height: 400px;
-    background: #0c0440 url(wayfaringwarrior/sample/images/outerspace.jpg);
+    background: #0c0440 url(sample/images/outerspace.jpg);
     color: #fff;
   }
   div.rocket {
@@ -17,7 +17,7 @@
   div.rocket div {
     width: 92px;
     height: 215px;
-    background: url(wayfaringwarrior/sample/images/rocket.gif) no-repeat;
+    background: url(sample/images/rocket.gif) no-repeat;
     -webkit-transition: 2s ease-in-out;
     -moz-transition: 2s ease-in-out;
     -o-transition: 2s ease-in-out;
