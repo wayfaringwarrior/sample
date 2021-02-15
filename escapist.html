@@ -7,14 +7,17 @@
 </head>
   <body>
   	<header>World Travels</header>
-  	<nav>
-  		<ul>All</ul>
-  		<ul>Europe</ul>
-  		<ul>South America</ul>
-  		<ul>South Asia</ul>
-  	</nav>
-    <div class="gallery">
-      <img src="images/barcelona.JPG" alt="Barcelona Gothic Quarter" width="600" height="400">
+    <!-- Control buttons -->
+  	<div id="myBtnContainer">
+  		<button class="btn active" onclick="filterSelection('all')">Show All</button>
+  		<button class="btn" onclick="filterSelection('europe')">Europe</button>
+  		<button class="btn" onclick="filterSelection('south america')">South America</button>
+  		<button class="btn" onclick="filterSelection('south asia')">South Asia</button>
+  	</div>
+    <!-- the filterable elements -->
+    <div class="container">
+    <div class="filterDiv europe">
+      <img src="images/barcelona.jpg" alt="Barcelona Gothic Quarter" width="600" height="400">
     <div class="desc">Barcelona Cathedral 
       <br>
     Gothic Quarter
@@ -22,14 +25,14 @@
   Barcelona, Spain</div>
   </div>
 
-  <div class="gallery">
+  <div class="filterDiv south america">
       <img src="images/buenos_aires.JPG" alt="Buenos Aires Architecture" width="600" height="400">
     <div class="desc">La Boca Architecture
     <br>
     Buenos Aires, Argentina</div>
   </div>
 
-  <div class="gallery">
+  <div class="filterDiv europe">
       <img src="images/florence.JPG" alt="Cathedral in Florence" width="600" height="400">
     <div class="desc">Cathedral of Santa Maria del Fiore
       <br>
@@ -37,7 +40,7 @@
 </div>
   </div>
 
-  <div class="gallery">
+  <div class="filterDiv europe">
       <img src="images/florence1.JPG" alt="Arno River in Florence" width="600" height="400">
     <div class="desc">Arno River
     <br> 
@@ -45,7 +48,7 @@
 </div>
   </div>
 
-    <div class="gallery">
+    <div class="filterDiv europe">
       <img src="images/florence2.JPG" alt="Cathedral in Florence" width="600" height="400">
     <div class="desc">Cathedral of Santa Maria del Fiore
       <br>
@@ -53,51 +56,102 @@
 </div>
   </div>
 
-  <div class="gallery">
+  <div class="filterDiv south asia">
       <img src="images/india.JPG" alt="Taj Mahal" width="600" height="400">
     <div class="desc">Taj Mahal
     <br>
     Agra, India</div>
   </div>
 
-<div class="gallery">
+<div class="filterDiv europe">
       <img src="images/paris.jpg" alt="Eiffel Tower" width="600" height="400">
     <div class="desc">Eiffel Tower
       <br>
       Paris, France</div>
 </div>
 
-<div class="gallery">
+<div class="filterDiv europe">
       <img src="images/paris1.jpg" alt="Louvre Museum" width="600" height="400">
     <div class="desc">Louvre Museum
       <br>
       Paris, France</div>
 </div>
 
-<div class="gallery">
+<div class="filterDiv europe">
       <img src="images/versailles.jpg" alt="Palace of Versailles" width="600" height="400">
     <div class="desc">Palace of Versailles
       <br>
       Versailles, France</div>
 </div>
 
-<div class="gallery">
+<div class="filterDiv europe">
       <img src="images/madrid.JPG" alt="Gran Via Avenue in Madrid" width="600" height="400">
     <div class="desc">Gran Via
       <br>
       Madrid, Spain</div>
 </div>
 
-<div class="gallery">
+<div class="filterDiv europe">
       <img src="images/sorrento.JPG" alt="Sorrento, Italy" width="600" height="400">
     <div class="desc">Sorrento, Italy</div>
 </div>
 
-<div class="gallery">
+<div class="filterDiv europe">
       <img src="images/rome.JPG" alt="Colosseum in Rome, Italy" width="600" height="400">
     <div class="desc">Colosseum
       <br>
     Rome, Italy</div>
 </div>
+</div>
+
+<script type="text/javascript">
+  function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+</script>
 </body>
 </html>

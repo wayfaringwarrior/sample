@@ -1,24 +1,12 @@
 div{
-  font-family: helvetica, sans-serif;
+  font-family: palatino;
 }
 
-nav{
-  font-family: helvitica, sans-serif;
+button{
+  font-family: palatino;
 }
 
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 250px;
-  margin-left: 50px;
-}
-
-div.gallery:hover{
-  border: 1px solid #3cb3719e;
-}
-
-div.gallery img {
+.filterDiv img {
   width: 100%;
   height: auto;
 }
@@ -26,31 +14,56 @@ div.gallery img {
 div.desc {
   padding: 15px;
   text-align: center;
+  opacity: .7;
 }
 
-.gallery{
-	transition-duration: 1s
+.container{
+  margin: 5px;
+  width: 450px;
+  margin-left: 50px;
 }
 
-.gallery:hover{
+.filterDiv{
+  display: none;
+  transition-duration: 1s;
+  border: 1px solid #ccc;
+}
+
+.show{
+  display: block;
+}
+
+div.filterDiv:hover{
 	transform: rotate(360deg);
 	opacity: 1;
 	background: #3cb3719e;
 }
 
-nav ul{
+div button:hover{
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+div button:active{
+  background-color: #666;
+  color: white;
+}
+
+div button{
   display: inline-block;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  width: 20%;
+  width: 15%;
   transition-duration: 1s;
   text-align: center;
   text-transform: uppercase;
-  color: white;
+  color: #151313;
   background-color: #3cb3719e;
-  margin-left: 35px;
+  margin-left: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   padding: 15px;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 header{
@@ -66,7 +79,6 @@ header{
   background-blend-mode: 25%;
   height: 40px;
   margin-left: 10px;
-  font-family: helvetica, sans-serif;
   font-size: 2em;
   margin-top: 15px;
 }
