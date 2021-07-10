@@ -1,3 +1,11 @@
+h1{
+	color: #8e68ff;
+	text-transform: lowercase;
+	text-shadow: 2px 2px black;
+	text-align: center;
+	font-size: 75px;
+}
+
 body{
 	margin: 2%;
 	border: 2px solid black;
@@ -5,6 +13,7 @@ body{
 	outline-style: groove;
 	outline-color: #8e68ff;
 	font-family: sans-serif;
+	text-transform: lowercase;
 }
 
 #image{
@@ -21,7 +30,8 @@ body{
     background-size: 100%;
     margin-bottom: 25px;
     font-size: 150%;
-    text-decoration: 
+    text-shadow: 2px 2px black;
+	text-align: center;
 }
 
 .preview{
