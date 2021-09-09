@@ -44,3 +44,8 @@ body{
 img{
 	width: 95%;
 }
+
+mark{
+	background-color: #8e68ff;
+	color: white;
+}
